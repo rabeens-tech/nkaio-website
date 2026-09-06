@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import StarField from "../components/StarField";
 import Overlay from "../components/Overlay";
 import CookieConsent from "../components/CookieConsent";
-import Footer from "../components/Footer";
 
 const MainPageTemplate = () => {
     return (
