@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+#root {
+  color: var(--paper);
+  background: var(--ink);
+}
