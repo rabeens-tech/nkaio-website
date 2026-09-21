@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({mode}) => ({
   plugins: [
     react(),
     tailwindcss()
@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true, 
   },
   // base:"/nkaio-website/",
-  // base: mode === 'production' ? '/nkaio-website/' : '/',
+  base: mode === 'production' ? '/nkaio-website/' : '/',
 
   resolve: {
     alias: {

@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { HashRouter, Routes, Route } from 'react-router';
 import NAV_ITEMS from './navs';
 import ErrorPage from './pages/Error';
 import ErrorBoundary from './pages/ErrorBoundary';
@@ -8,14 +8,14 @@ import ErrorBoundary from './pages/ErrorBoundary';
 function App() {
 
   return (<ErrorBoundary fallback={<ErrorPage />}>
-  <BrowserRouter>
+  <HashRouter >
     <Routes>
       {NAV_ITEMS.map((item) => (
         <Route key={item.name} path={item.link} element={item.element()} />
       ))}
       <Route path="*" element={<ErrorPage />} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
       </ErrorBoundary>
   )
 }

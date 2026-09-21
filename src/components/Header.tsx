@@ -4,6 +4,7 @@ import { Menu, ArrowUpRight } from "lucide-react";
 import Booking from "./Booking";
 import NAV_ITEMS from "../navs";
 import Contact from "./Contact";
+import { Link } from "react-router";
 
 
 const MobileHeader: React.FC = () => {
@@ -39,9 +40,9 @@ const MobileHeader: React.FC = () => {
 
                 <nav className="px-4 pb-10 pt-2">
                   {NAV_ITEMS.filter((item) => item.header).map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={  item.link}
+                      to={  item.link}
                       onClick={() => setMenuOpen(false)}
                       className="group flex items-center justify-between border-b border-white/[0.07] py-5"
                     >
@@ -49,7 +50,7 @@ const MobileHeader: React.FC = () => {
                         {item.name}
                       </span>
                       <ArrowUpRight className="h-4 w-4 text-white/30 transition group-hover:text-[#D6B77C]" />
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </Drawer.Content>
