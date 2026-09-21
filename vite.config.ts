@@ -13,7 +13,7 @@ export default defineConfig({
     outDir: 'docs',
     emptyOutDir: true, 
   },
-  base:"nkaio-website",
+  base:"/nkaio-website/",
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'), 
