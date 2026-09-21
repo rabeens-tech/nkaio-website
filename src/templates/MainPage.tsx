@@ -31,7 +31,7 @@ const IdentityVideo = () =>{
         loop
         playsInline
         className="absolute inset-0 h-full w-full object-cover opacity-100"
-        aria-hidden="true"
+        // aria-hidden="true"
     >
         <source src="/animate.mp4" type="video/mp4" />
     </video>

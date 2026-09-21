@@ -8,7 +8,7 @@ import ErrorBoundary from './pages/ErrorBoundary';
 function App() {
 
   return (<ErrorBoundary fallback={<ErrorPage />}>
-  <BrowserRouter>
+  <BrowserRouter basename={import.meta.env.PROD ? '/nkaio-website' : '/'}>
     <Routes>
       {NAV_ITEMS.map((item) => (
         <Route key={item.name} path={item.link} element={item.element()} />

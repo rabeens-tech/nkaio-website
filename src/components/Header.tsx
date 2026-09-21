@@ -41,7 +41,7 @@ const MobileHeader: React.FC = () => {
                   {NAV_ITEMS.filter((item) => item.header).map((item) => (
                     <a
                       key={item.name}
-                      href={item.link}
+                      href={  item.link}
                       onClick={() => setMenuOpen(false)}
                       className="group flex items-center justify-between border-b border-white/[0.07] py-5"
                     >
