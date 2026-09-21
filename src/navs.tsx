@@ -1,7 +1,10 @@
+import AboutPage from "./pages/About";
+import ContactPage from "./pages/Contact";
 import Doctor from "./pages/Doctor";
 import HomePage from "./pages/Homepage";
 import Nails from "./pages/Nails";
 import Privacy from "./pages/Privacy";
+import Services from "./pages/Services";
 
 const NAV_ITEMS = [
   {
@@ -13,14 +16,14 @@ const NAV_ITEMS = [
   },
   {
     name: "About",
-    element: () => <div>About</div>,
+    element: () => <AboutPage />,
     link: "/about",
     header:true,
     footer:true
   },
   {
     name: "Services",
-    element: () => <div>Services</div>,
+    element: () => <Services />,
     link: "/services",
     header:true,
     footer:true
@@ -41,7 +44,7 @@ const NAV_ITEMS = [
   },
   {
     name: "Contact",
-    element: () => <div>Contact</div>,
+    element: () => <ContactPage />,
     link: "/contact",
     header:true,
     footer:true
