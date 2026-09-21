@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true, 
   },
   // base:"/nkaio-website/",
-  base: mode === 'production' ? '/nkaio-website/' : '/',
+  // base: mode === 'production' ? '/nkaio-website/' : '/',
 
   resolve: {
     alias: {
