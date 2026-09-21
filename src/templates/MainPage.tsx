@@ -1,6 +1,6 @@
 import Header from "../components/Header";
-import StarField from "../components/StarField";
-import Overlay from "../components/Overlay";
+// import StarField from "../components/StarField";
+// import Overlay from "../components/Overlay";
 import CookieConsent from "../components/CookieConsent";
 
 const MainPageTemplate = () => {

@@ -9,6 +9,11 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  build:{
+    outDir: 'docs',
+    emptyOutDir: true, 
+  },
+  base:"nkaio-website",
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'), 
