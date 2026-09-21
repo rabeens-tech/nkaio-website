@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Drawer } from "vaul";
 import { Calendar, X } from "lucide-react";
+import { THEME } from "../theme";
 
 interface IBooking {
     calendly_url: string | undefined | null;
@@ -15,11 +16,16 @@ const Booking = ({ calendly_url }: IBooking) => {
         <Drawer.Root open={open} onOpenChange={setOpen}>
             <Drawer.Trigger asChild>
                 <button
-                    className="flex items-center gap-2 rounded-full border border-[#e0c88e] bg-[#c7a96b] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#0b0b0b] transition hover:bg-[#e0c88e] active:scale-95"
+                    className="flex items-center justify-center gap-2 rounded-full p-2.5 transition active:scale-95"
                     aria-label="Open booking"
+                    style={{
+                        backgroundColor: THEME.colors.panel,
+                        color: THEME.colors.goldLight,
+                    }}
                 >
-                    <span className="cursor-pointer">BOOK</span>
-                    <Calendar className="h-3.5 w-3.5" />
+                    <Calendar className="h-4 w-4" />
+                    <span className="hidden text-[11px] font-semibold uppercase tracking-[0.12em] sm:inline" style={{ color: THEME.colors.goldLight }}>BOOK</span>
+
                 </button>
             </Drawer.Trigger>
 

@@ -8,6 +8,9 @@
   --gold: #c7a96b;
   --gold-light: #e0c88e;
   --line: rgba(224, 200, 142, 0.22);
+  --panel: rgba(199, 169, 107, 0.06);
+  --panel-hover: rgba(199, 169, 107, 0.12);
+  --border-soft: rgba(199, 169, 107, 0.35);
   --sans: "DM Sans", "Helvetica Neue", sans-serif;
   --heading: "Cormorant Garamond", Georgia, serif;
 

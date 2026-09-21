@@ -1,5 +1,6 @@
 import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 import NAV_ITEMS from "../navs";
+import { Link } from "react-router";
 
 
 const Footer = () => {
@@ -8,13 +9,14 @@ const Footer = () => {
 			<div className="mx-auto max-w-6xl px-5 pb-7 pt-14 sm:px-8 sm:pt-16">
 				<div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr] md:gap-8">
 					<div>
-						<a
-							href="/"
-							className="inline-block text-2xl font-semibold tracking-[0.3em] text-white"
+						<Link
+							to="/"
+							className="inline-block text-2xl font-semibold tracking-[0.3em]"
+							style={{ color: "#e0c88e" }}
 						>
 							NKAIO
-						</a>
-						<p className="mt-5 max-w-xs text-sm leading-6 text-white/55">
+						</Link>
+						<p className="mt-5 max-w-xs text-sm leading-6" style={{ color: "rgba(224, 200, 142, 0.75)" }}>
 							A considered space for beauty, wellness, and feeling more like
 							yourself.
 						</p>
