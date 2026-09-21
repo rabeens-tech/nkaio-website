@@ -6,57 +6,59 @@ import Nails from "./pages/Nails";
 import Privacy from "./pages/Privacy";
 import Services from "./pages/Services";
 
+const base_url = "/nkaio-website"
 const NAV_ITEMS = [
   {
     name: "Home",
     element: () => <HomePage />,
-    link: "/",
+    link: base_url + "/",
     header:true,
     footer:true
   },
   {
     name: "About",
     element: () => <AboutPage />,
-    link: "/about",
+    link: base_url + "/about",
     header:true,
     footer:true
   },
   {
     name: "Services",
     element: () => <Services />,
-    link: "/services",
+    link: base_url + "/services",
     header:true,
     footer:true
   },
   {
     name: "Nails",
     element: () => <Nails />,
-    link: "/nails",
+    link: base_url + "/nails",
     header:true,
     footer:true
   },
   {
     name: "Doctor",
     element: () => <Doctor />,
-    link: "/doctor",
+    link: base_url + "/doctor",
     header:true,
     footer:true
   },
   {
     name: "Contact",
     element: () => <ContactPage />,
-    link: "/contact",
+    link: base_url + "/contact",
     header:true,
     footer:true
   },
   {
     name: "Privacy",
     element: () => <Privacy />,
-    link: "/privacy",
+    link: base_url + "/privacy",
     header:true,
     footer:true
   }
 ];
+
 
 
 export default NAV_ITEMS;
