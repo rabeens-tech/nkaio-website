@@ -50,7 +50,7 @@ const MobileHeader: React.FC = () => {
                         key={item.name}
                         to={item.link}
                         onClick={() => setMenuOpen(false)}
-                        className="group flex items-center gap-3 border-b border-white/[0.07] py-1.5 transition hover:bg-white/[0.02]"
+                        className="group flex items-center gap-3 border-b border-white/[0.07] py-1.5 transition hover:bg-white/[0.02]  py-3"
                       >
                         <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md">
                           <img
