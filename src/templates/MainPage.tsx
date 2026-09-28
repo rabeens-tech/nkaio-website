@@ -30,7 +30,7 @@ const IdentityVideo = () =>{
         muted
         loop
         playsInline
-        className="absolute inset-0 h-full w-full object-cover opacity-100"
+        className="absolute inset-0 h-full w-full object-contain opacity-100"
         // aria-hidden="true"
     >
         <source   src={`${import.meta.env.BASE_URL}animate.mp4`}  type="video/mp4" />
