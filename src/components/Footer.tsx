@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
 	return (
-		<footer className="relative z-10 border-t border-white/10 bg-[#08080c] text-white">
+		<footer className="relative z-10 border-t border-white/10 bg-[#08080c] text-white" style={{color: "rgba(224, 200, 142, 0.75)"}}>
 			<div className="mx-auto max-w-6xl px-5 pb-7 pt-14 sm:px-8 sm:pt-16">
 				<div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr] md:gap-8">
 					<div>
@@ -31,7 +31,7 @@ const Footer = () => {
 								<a
 									key={item.name}
 									href={item.link}
-									className="group flex w-fit items-center gap-1.5 text-sm text-white/65 transition hover:text-white"
+									className="group flex w-fit items-center gap-1.5 text-sm text-[#D6B77C] transition hover:text-white"
 								>
 									{item.name}
 									<ArrowUpRight className="h-3.5 w-3.5 text-[#D6B77C] opacity-0 transition group-hover:opacity-100" />
@@ -44,17 +44,17 @@ const Footer = () => {
 						<p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#D6B77C]">
 							Visit us
 						</p>
-						<div className="mt-5 grid gap-4 text-sm leading-6 text-white/65">
+						<div className="mt-5 grid gap-4 text-sm leading-6 text-[#D6B77C]">
 							<a
 								href="#contact"
-								className="flex items-start gap-3 transition hover:text-white"
+								className="flex items-start gap-3 transition hover:text-[#D6B77C]"
 							>
 								<MapPin className="mt-1 h-4 w-4 flex-none text-[#D6B77C]" />
 								<span>Find your way to NKAIO<br />Your city, your ritual</span>
 							</a>
 							<a
 								href="mailto:hello@nkaio.com"
-								className="flex items-center gap-3 transition hover:text-white"
+								className="flex items-center gap-3 transition hover:text-[#D6B77C]"
 							>
 								<Mail className="h-4 w-4 flex-none text-[#D6B77C]" />
 								hello@nkaio.com
@@ -63,7 +63,7 @@ const Footer = () => {
 					</div>
 				</div>
 
-				<div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-5 text-[11px] text-white/40 sm:flex-row sm:items-center sm:justify-between">
+				<div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-5 text-[11px] text-[#D6B77C] sm:flex-row sm:items-center sm:justify-between">
 					<p>© {new Date().getFullYear()} NKAIO. All rights reserved.</p>
 					<a href="/privacy" className="transition hover:text-white">
 						Privacy Policy

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Drawer } from "vaul";
-import { Menu, ArrowUpRight } from "lucide-react";
+import { Menu } from "lucide-react";
 import Booking from "./Booking";
 import NAV_ITEMS from "../navs";
 import Contact from "./Contact";
@@ -44,24 +44,28 @@ const MobileHeader: React.FC = () => {
 
                   <Drawer.Title className="sr-only">Navigation</Drawer.Title>
 
-                  <nav className="px-4 pb-10 pt-2">
+                  <nav className="px-4 pb-10 pt-2 overflow-y-scroll scrollbar-none">
                     {NAV_ITEMS.filter((item) => item.header).map((item) => (
                       <Link
                         key={item.name}
                         to={item.link}
                         onClick={() => setMenuOpen(false)}
-                        className="group flex items-center justify-between border-b border-white/[0.07] py-5"
+                        className="group flex items-center gap-3 border-b border-white/[0.07] py-1.5 transition hover:bg-white/[0.02]"
                       >
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md">
+                          <img
+                            src={item.icon ?? undefined}
+                            alt={item.name}
+                            className="h-[90%] w-[90%] object-cover"
+                            style={{ filter: "brightness(1.08)" }}
+                          />
+                        </div>
                         <span
-                          className="text-[15px] font-medium tracking-wide transition"
+                          className="text-[1.3em] font-medium tracking-wide transition"
                           style={{ color: THEME.colors.goldLight }}
                         >
                           {item.name}
                         </span>
-                        <ArrowUpRight
-                          className="h-4 w-4 transition"
-                          style={{ color: THEME.colors.goldLight }}
-                        />
                       </Link>
                     ))}
                   </nav>

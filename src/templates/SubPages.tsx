@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import StarField from "../components/StarField";
 
 
 interface ISubPageTemplate {
@@ -9,7 +10,7 @@ interface ISubPageTemplate {
 
 const SubPageTemplate = (props: ISubPageTemplate) => {
     return <>
-        {/* <StarField /> */}
+        <StarField />
         <div className="relative z-10">
             <Header />
         </div>
