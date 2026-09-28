@@ -13,7 +13,7 @@ const NAV_ITEMS = [
     link: "/",
     header:true,
     footer:true,
-    icon: "/icons/home.png"
+    icon: "icons/home.png"
   },
   {
     name: "About",
@@ -21,7 +21,7 @@ const NAV_ITEMS = [
     link: "/about",
     header:true,
     footer:true,
-    icon: "/icons/about.png"
+    icon: "icons/about.png"
   },
   // {
   //   name: "Services",
@@ -36,7 +36,7 @@ const NAV_ITEMS = [
     link: "/nails",
     header:true,
     footer:true,
-    icon: "/icons/nails.png"
+    icon: "icons/nails.png"
   },
   {
     name: "Hair",
@@ -44,7 +44,7 @@ const NAV_ITEMS = [
     link: "/hair",
     header:true,
     footer:true,
-    icon: "/icons/hair.jpeg"
+    icon: "icons/hair.jpeg"
   },
   {
     name: "Body & Makeup",
@@ -52,7 +52,7 @@ const NAV_ITEMS = [
     link: "/body-and-makeup",
     header:true,
     footer:true,
-    icon: "/icons/body-and-makeup.png"
+    icon: "icons/body-and-makeup.png"
   },
   {
     name: "Esthetic Hair",
@@ -60,7 +60,7 @@ const NAV_ITEMS = [
     link: "/esthetic-hair",
     header:true,
     footer:true,
-    icon: "/icons/esthetic-hair.jpeg"
+    icon: "icons/esthetic-hair.jpeg"
   },
   {
     name: "Esthetic Body",
@@ -68,7 +68,7 @@ const NAV_ITEMS = [
     link: "/esthetic-body",
     header:true,
     footer:true,
-    icon: "/icons/esthetic-body.png"
+    icon: "icons/esthetic-body.png"
   },
   {
     name: "Doctor",
@@ -76,7 +76,7 @@ const NAV_ITEMS = [
     link: "/doctor",
     header:true,
     footer:true,
-    icon: "/icons/doctor.png"
+    icon: "icons/doctor.png"
   },
   {
     name: "Bar",
@@ -84,7 +84,7 @@ const NAV_ITEMS = [
     link: "/bar",
     header:true,
     footer:true,
-    icon: "/icons/bar.png"
+    icon: "icons/bar.png"
   },
   {
     name: "Contact",
@@ -92,7 +92,7 @@ const NAV_ITEMS = [
     link: "/contact",
     header:true,
     footer:true,
-    icon: "/icons/contact.png"
+    icon: "icons/contact.png"
   },
   {
     name: "Privacy",
@@ -100,7 +100,7 @@ const NAV_ITEMS = [
     link: "/privacy",
     header:true,
     footer:true,
-    icon: "/icons/privacy.png"
+    icon: "icons/privacy.png"
   }
 ];
 

@@ -54,7 +54,7 @@ const MobileHeader: React.FC = () => {
                       >
                         <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md">
                           <img
-                            src={item.icon ?? undefined}
+                            src={(import.meta.env.BASE_URL || "/")  + item.icon }
                             alt={item.name}
                             className="h-[90%] w-[90%] object-cover"
                             style={{ filter: "brightness(1.08)" }}
