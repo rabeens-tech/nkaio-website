@@ -4,7 +4,7 @@ import Doctor from "./pages/Doctor";
 import HomePage from "./pages/Homepage";
 import Nails from "./pages/Nails";
 import Privacy from "./pages/Privacy";
-import Services from "./pages/Services";
+// import Services from "./pages/Services";
 
 const NAV_ITEMS = [
   {
