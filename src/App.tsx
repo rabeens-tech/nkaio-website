@@ -1,23 +1,28 @@
-import './App.css'
-import { HashRouter, Routes, Route } from 'react-router';
-import NAV_ITEMS from './navs';
-import ErrorPage from './pages/Error';
-import ErrorBoundary from './pages/ErrorBoundary';
-
+import { HashRouter, Route, Routes } from "react-router";
+import { LanguageProvider } from "./i18n";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import { SiteLayout } from "./components/SiteLayout";
+import { SomethingWentWrong } from "./components/SomethingWentWrong";
+import NotFound from "./pages/NotFound";
+import { ROUTES } from "./routes";
 
 function App() {
-
-  return (<ErrorBoundary fallback={<ErrorPage />}>
-  <HashRouter >
-    <Routes>
-      {NAV_ITEMS.map((item) => (
-        <Route key={item.name} path={item.link} element={item.element()} />
-      ))}
-      <Route path="*" element={<ErrorPage />} />
-    </Routes>
-  </HashRouter>
-      </ErrorBoundary>
-  )
+  return (
+    <LanguageProvider>
+      <HashRouter>
+        <ErrorBoundary fallback={<SomethingWentWrong />}>
+          <Routes>
+            <Route element={<SiteLayout />}>
+              {ROUTES.map((route) => (
+                <Route key={route.path} path={route.path} element={route.element} />
+              ))}
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </ErrorBoundary>
+      </HashRouter>
+    </LanguageProvider>
+  );
 }
 
-export default App
+export default App;

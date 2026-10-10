@@ -1,0 +1,230 @@
+export const en = {
+  language: "Language",
+  skipToContent: "Skip to content",
+  menuTitle: "Explore NKAIO",
+  mainNavigation: "Main navigation",
+  footerNavigation: "Footer navigation",
+  socialLinks: "Social media",
+
+  navHome: "Home",
+  navAbout: "About",
+  navServices: "Services",
+  navNails: "Nails",
+  navHair: "Hair",
+  navBodyMakeup: "Body & Makeup",
+  navEstheticHair: "Esthetic Hair",
+  navEstheticBody: "Esthetic Body",
+  navDoctor: "Expertise",
+  navBar: "Beauty Bar",
+  navContact: "Contact",
+  navPrivacy: "Privacy",
+
+  toggleMenu: "Toggle menu",
+  closeNavigation: "Close navigation",
+  sidebarTagline: "THE HOME OF NKAIO",
+  explore: "Explore",
+  visitUs: "Visit us",
+
+  scheduleSession: "Schedule Session",
+  contact: "Contact",
+  callUs: "Call us",
+  call: "Call",
+  openBooking: "Open booking",
+  closeBooking: "Close booking",
+  appointment: "Appointment",
+  bookYourVisit: "Book your visit",
+  bookingFrameTitle: "Book an appointment",
+  appointmentsEnquiries: "Appointments & enquiries",
+  contactNkaio: "Contact NKAIO",
+
+  heroEyebrow: "Beauty, made personal",
+  heroTitle: "Your time to",
+  heroGlow: "glow",
+  heroDescription:
+    "A little more you, feeling your very best. Thoughtful beauty services, personal attention, and a moment that belongs entirely to you.",
+  heroScroll: "Scroll to explore",
+  studioLabel: "NKAIO beauty studio, Porto",
+
+  homeEyebrow: "The NKAIO edit",
+  homeTitle: "Care that feels like",
+  homeTitleYou: "you",
+  homeServiceIntro: "From the finishing touches to a full reset, find the service that feels right for you.",
+  serviceGeneral: "General Services",
+  serviceHair: "Hair",
+  serviceHairDetail: "Cut, colour & styling",
+  serviceNails: "Nails",
+  serviceNailsDetail: "Manicures & nail care",
+  serviceSkin: "Skin",
+  serviceSkinDetail: "Thoughtful skin rituals",
+  serviceMakeup: "Makeup",
+  serviceMakeupDetail: "Makeup for every occasion",
+  
+  serviceEsthetic: "Esthetic",
+
+  serviceDoctor: "Doctor",
+  servicePsychologyIntro: "A calm, personal approach to feeling refreshed and cared for.",
+  servicePhysiotherapyIntro: "A calm, personal approach to feeling refreshed and cared for.",
+  serviceNutritionistIntro: "A calm, personal approach to feeling refreshed and cared for.",
+  servicePsychologyTitle: "Psychology",
+  servicePhysiotherapyTitle: "Physiotherapy",
+  serviceNutritionistTitle: "Nutritionist",
+  serviceDoctorDetail: "Psychology Physiotherapy and Nutritionist",
+  servicePsychology: "Psychology",
+  servicePhysiotherapy: "Physiotherapy",
+  serviceNutritionist: "Nutritionist",
+
+  homeQuote: "A beautiful result starts with listening.",
+  discoverNkaio: "Discover NKAIO",
+
+  philosophyEyebrow: "Our ritual",
+  philosophyTitle: "Slow beauty,",
+  philosophyTitleAccent: "considered care",
+  philosophyBody:
+    "Every chair, every formula and every gesture is chosen with the same question in mind: does this feel good? We keep our appointments unhurried so the result speaks before you leave.",
+  philosophyPointOne: "Private, one-to-one rooms",
+  philosophyPointTwo: "Vegan & cruelty-free ranges",
+  philosophyPointThree: "Sterilised instruments, always",
+
+  aboutEyebrow: "Our point of view",
+  aboutTitle: "Beauty should feel like",
+  aboutYou: "you",
+  aboutLead: "NKAIO is a space to slow down, feel looked after, and leave feeling more yourself.",
+  aboutParagraphOne:
+    "We believe the best beauty experience is personal. It begins with listening, leaves room for your preferences, and gives care to the details that matter to you.",
+  aboutParagraphTwo:
+    "Whether you are visiting for a small refresh or a little time set aside, we want you to feel welcome from the moment you arrive.",
+  aboutCta: "Come say hello",
+
+  serviceEyebrow: "The NKAIO edit",
+  servicesIntro:
+    "Every treatment under one roof. Choose the care you need and we will take care of the rest.",
+  servicesHelp: "Not sure which treatment is right for you? Tell us what you would like to change.",
+  viewAllServices: "View all services",
+  moreServices: "More services",
+  serviceOne: "service",
+  serviceCount: "services",
+  serviceNailsTitle: "Nail care",
+  serviceNailsIntro: "A polished finish, with time and care given to every detail.",
+  serviceNailsNote: "Manicures \u00b7 Nail care \u00b7 Finishing touches",
+  serviceHairTitle: "Hair",
+  serviceHairIntro: "A considered approach to your cut, colour, and everyday style.",
+  serviceHairNote: "Consultation \u00b7 Styling \u00b7 Personal care",
+  serviceMakeupTitle: "Makeup & beauty",
+  serviceMakeupIntro: "Thoughtful finishing touches for everyday moments and special occasions.",
+  serviceMakeupNote: "Personalised looks \u00b7 Event-ready details",
+  serviceEstheticHairTitle: "Hair rituals",
+  serviceEstheticHairIntro: "Take a moment for yourself with attentive, personalised care.",
+  serviceEstheticHairNote: "Consultation \u00b7 Care \u00b7 A little time for you",
+  serviceEstheticBodyTitle: "Skin & body",
+  serviceEstheticBodyIntro: "A calm, personal approach to feeling refreshed and cared for.",
+  serviceEstheticBodyNote: "Personal consultation \u00b7 Thoughtful care",
+
+
+  servicePsychologyNote: "Personal consultation \u00b7 Thoughtful care",
+  servicePhysiotherapyNote: "Personal consultation \u00b7 Thoughtful care",
+  serviceNutritionistNote: "Personal consultation \u00b7 Thoughtful care",
+  stepOneTitle: "Start with you",
+  stepOneDescription: "Every visit begins with a conversation about what you want.",
+  stepTwoTitle: "Thoughtful care",
+  stepTwoDescription: "We take the time to make your appointment feel personal.",
+  stepThreeTitle: "Leave feeling good",
+  stepThreeDescription: "A considered finish, and a little more time for yourself.",
+  askAboutService: "Ask us about a service",
+
+  studioEyebrow: "NKAIO \u00b7 Beauty & wellbeing",
+  doctorTitle: "Personal care",
+  barTitle: "The beauty bar",
+  doctorDescription:
+    "A relaxed place to talk through what you are looking for and find the right next step for your visit.",
+
+  contactEyebrow: "Contact us",
+  contactTitle: "Book your moment of care",
+  contactIntro:
+    "We create considered beauty experiences designed around your routine, your preferences, and your time.",
+  getInTouch: "Get in touch",
+  sendInquiry: "Send an inquiry",
+  yourName: "Your name",
+  email: "Email",
+  subject: "Subject",
+  subjectPlaceholder: "Appointment, consultation, service inquiry",
+  requestDetails: "Tell us about your request",
+  requestPlaceholder: "I would like to book a treatment for\u2026",
+  replyTime: "We usually reply within 24 hours",
+  sendRequest: "Send request",
+  directContact: "Direct contact",
+  visit: "Visit",
+  address: "Address",
+  openInMaps: "Open in maps",
+  locationTagline: "Porto, Portugal",
+  openingHours: "Opening hours",
+  mondayFriday: "Monday \u2013 Friday",
+  saturday: "Saturday",
+  sunday: "Sunday",
+  byAppointment: "By appointment only",
+  followAlong: "Follow along",
+  instagramDescription: "Discover beauty rituals, treatment highlights, and seasonal offers.",
+  readyBegin: "Ready to begin?",
+  contactHelp: "We\u2019ll help you find the right treatment for your routine.",
+
+  privacyPolicy: "Privacy Policy",
+  footerTagline: "A considered space for beauty, wellness, and feeling more like yourself.",
+  findYourWay: "Find your way to NKAIO",
+  allRightsReserved: "All rights reserved.",
+
+  cookieDialog: "Cookie consent",
+  close: "Close",
+  cookieTitle: "We use cookies",
+  cookieDescription: "We use cookies to enhance your experience and analyse site traffic. By accepting, you agree to our",
+  acceptAll: "Accept all",
+  decline: "Decline",
+
+  pageNotFound: "Page not found",
+  notFoundDescription: "This page has wandered beyond the studio. Let us take you back to the beginning.",
+  returnHome: "Return home",
+  somethingWentWrong: "Something went wrong",
+
+  privacyTitle: "Your privacy matters",
+  privacyIntro:
+    "This Privacy Policy explains how NKAIO collects, uses, stores, and protects personal information from clients who book beauty services, treatments, or appointments through our website or related booking channels. We are committed to protecting your data and handling it in accordance with the General Data Protection Regulation (GDPR).",
+  privacySection1Title: "1. Who we are",
+  privacySection1:
+    "NKAIO is a Portugal-based beauty and wellness organisation offering personalised beauty services, treatments, and appointment bookings. We act as the data controller for personal data collected through our website, booking forms, and appointment scheduling tools.",
+  privacySection2Title: "2. Information we collect",
+  privacySection2:
+    "We may collect personal information such as your name, phone number, email address, treatment preferences, appointment date and time, booking history, and any other information you provide when contacting us or booking a session. We may also collect technical information such as browser type, device details, and site usage data for security and service improvement purposes.",
+  privacySection3Title: "3. Why we process your data",
+  privacySection3:
+    "We use your personal data to manage appointments, confirm and remind you of bookings, provide beauty services, respond to your enquiries, maintain service records, improve our customer experience, prevent fraud or misuse, and comply with our legal and regulatory obligations.",
+  privacySection4Title: "4. Legal basis for processing",
+  privacySection4:
+    "We process personal data on the basis of contract performance, legitimate interest, consent, and legal obligations. For example, when you book a session, we process your information to fulfil the appointment request. Where required, we will ask for clear consent before sending direct marketing messages or processing optional data beyond the essentials of the service.",
+  privacySection5Title: "5. Bookings and appointment data",
+  privacySection5:
+    "Booking information is treated as sensitive operational data necessary to deliver your selected service. We use secure booking tools and scheduling systems, and we take appropriate technical and organisational measures to protect this information from unauthorised access, loss, or misuse. If we use third-party booking providers, they will process data only as necessary to deliver the booking service under their own privacy terms and applicable GDPR requirements.",
+  privacySection6Title: "6. Data security",
+  privacySection6:
+    "We take reasonable and appropriate security measures to protect personal data, including secure hosting, restricted access controls, password protection, encryption where applicable, and careful management of third-party service providers. While no system can guarantee absolute security, we use commercially reasonable safeguards to protect client information in line with GDPR principles.",
+  privacySection7Title: "7. Data retention",
+  privacySection7:
+    "We retain personal information only for as long as necessary for the purposes described in this policy, or as required by applicable law, accounting, tax, or dispute-resolution obligations. Appointment records are generally kept for a limited period to maintain service quality and legal compliance.",
+  privacySection8Title: "8. Your GDPR rights",
+  privacySection8:
+    "Under the GDPR, you have the right to access your personal data, request correction of inaccurate data, request deletion of your data where appropriate, restrict or object to processing, and request data portability. You also have the right to withdraw consent at any time where consent is the legal basis for processing. To exercise any of these rights, please contact us using the details below.",
+  privacySection9Title: "9. Cookies and website analytics",
+  privacySection9:
+    "Our website may use cookies or similar tools to ensure proper functionality, improve user experience, and understand visitor behaviour. Cookies may help us remember preferences and measure site performance. You can manage cookie preferences in your browser settings and, where required, through our cookie notice or consent mechanism.",
+  privacySection10Title: "10. Marketing communications",
+  privacySection10:
+    "We may send service updates, reminders, or promotional content only where you have given us your consent or where such communication is otherwise allowed under applicable law. You can opt out at any time by following the unsubscribe link in our communications or by contacting us directly.",
+  privacySection11Title: "11. International transfers",
+  privacySection11:
+    "If personal data is transferred outside the European Economic Area (EEA), we will ensure appropriate safeguards are in place in accordance with GDPR requirements, such as adequacy decisions, standard contractual clauses, or other lawful transfer mechanisms.",
+  privacySection12Title: "12. Contact and complaints",
+  privacySection12:
+    "If you have any questions about this Privacy Policy, your personal data, or the way we handle your information, please contact us. If you believe we have not handled your personal data in accordance with the law, you have the right to make a complaint to the relevant data protection authority in Portugal or in the EU member state where you live or work.",
+  privacyContact:
+    "If you would like to access, update, or delete your personal data, or if you have any questions about this policy, please contact us via the channels provided on our website or through the contact section of this site.",
+} as const;
+
+export type TranslationKey = keyof typeof en;
+export type Dictionary = Record<TranslationKey, string>;

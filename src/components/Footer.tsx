@@ -1,77 +1,93 @@
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
-import NAV_ITEMS from "../navs";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router";
+import { BRAND, CONTACT, NAV_COLUMNS } from "../config";
+import { useLanguage } from "../i18n";
+import { getRoute } from "../routes";
+import { Flourish } from "./Ornaments";
+import { SocialRow } from "./SocialRow";
 
+export function Footer() {
+  const { t } = useLanguage();
 
-const Footer = () => {
-	return (
-		<footer className="relative z-10 border-t border-white/10 bg-[#08080c] text-white" style={{color: "rgba(224, 200, 142, 0.75)"}}>
-			<div className="mx-auto max-w-6xl px-5 pb-7 pt-14 sm:px-8 sm:pt-16">
-				<div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1fr] md:gap-8">
-					<div>
-						<Link
-							to="/"
-							className="inline-block text-2xl font-semibold tracking-[0.3em]"
-							style={{ color: "#e0c88e" }}
-						>
-							NKAIO
-						</Link>
-						<p className="mt-5 max-w-xs text-sm leading-6" style={{ color: "rgba(224, 200, 142, 0.75)" }}>
-							A considered space for beauty, wellness, and feeling more like
-							yourself.
-						</p>
-					</div>
+  return (
+    <footer className="relative isolate overflow-hidden border-t border-gold-hairline bg-ink-soft">
+      <div
+        className="pointer-events-none absolute inset-x-0 -top-40 h-80 opacity-70"
+        style={{ background: "radial-gradient(60% 100% at 50% 100%, rgba(199,169,107,0.10), transparent 70%)" }}
+        aria-hidden="true"
+      />
 
-					<div>
-						<p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#D6B77C]">
-							Explore
-						</p>
-						<nav aria-label="Footer navigation" className="mt-5 grid gap-3">
-							{NAV_ITEMS.filter((item) => item.footer).map((item) => (
-								<a
-									key={item.name}
-									href={item.link}
-									className="group flex w-fit items-center gap-1.5 text-sm text-[#D6B77C] transition hover:text-white"
-								>
-									{item.name}
-									<ArrowUpRight className="h-3.5 w-3.5 text-[#D6B77C] opacity-0 transition group-hover:opacity-100" />
-								</a>
-							))}
-						</nav>
-					</div>
+      <div className="shell relative pb-8 pt-16 sm:pt-20">
+        <div className="flex flex-col items-center gap-4 text-center">
+          <img src={`${import.meta.env.BASE_URL}${BRAND.wordmark}`} alt={BRAND.name} className="h-9 w-auto object-contain drop-gold sm:h-11" />
+          <Flourish className="max-w-sm" />
+          <p className="max-w-md font-gothic text-xl leading-snug text-gold-light/90 sm:text-2xl">{t("footerTagline")}</p>
+        </div>
 
-					<div>
-						<p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#D6B77C]">
-							Visit us
-						</p>
-						<div className="mt-5 grid gap-4 text-sm leading-6 text-[#D6B77C]">
-							<a
-								href="#contact"
-								className="flex items-start gap-3 transition hover:text-[#D6B77C]"
-							>
-								<MapPin className="mt-1 h-4 w-4 flex-none text-[#D6B77C]" />
-								<span>Find your way to NKAIO<br />Your city, your ritual</span>
-							</a>
-							<a
-								href="mailto:hello@nkaio.com"
-								className="flex items-center gap-3 transition hover:text-[#D6B77C]"
-							>
-								<Mail className="h-4 w-4 flex-none text-[#D6B77C]" />
-								hello@nkaio.com
-							</a>
-						</div>
-					</div>
-				</div>
+        <div className="mt-14 grid gap-12 border-t border-gold-hairline pt-10 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+          <div>
+            <p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-gold">{t("socialLinks")}</p>
+            <SocialRow className="mt-5" />
+          </div>
 
-				<div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-5 text-[11px] text-[#D6B77C] sm:flex-row sm:items-center sm:justify-between">
-					<p>© {new Date().getFullYear()} NKAIO. All rights reserved.</p>
-					<a href="/privacy" className="transition hover:text-white">
-						Privacy Policy
-					</a>
-				</div>
-			</div>
-		</footer>
-	);
-};
+          {NAV_COLUMNS.map((column) => (
+            <nav key={column.id} aria-label={t("footerNavigation")}>
+              <p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-gold">{t(column.labelKey)}</p>
+              <ul className="mt-5 grid gap-3">
+                {column.routes.map((path) => {
+                  const route = getRoute(path);
+                  if (!route) return null;
+                  return (
+                    <li key={path}>
+                      <Link
+                        to={path}
+                        className="group inline-flex items-center gap-1.5 text-sm text-bone/70 transition hover:text-gold-bright"
+                      >
+                        {t(route.labelKey)}
+                        <ArrowUpRight className="h-3.5 w-3.5 text-gold/70 opacity-0 transition group-hover:opacity-100" />
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+          ))}
 
-export default Footer;
+          <div>
+            <p className="text-[9px] font-semibold uppercase tracking-[0.26em] text-gold">{t("address")}</p>
+            <div className="mt-5 grid gap-4 text-sm">
+              <a href={CONTACT.mapsUrl} target="_blank" rel="noreferrer noopener" className="group flex items-start gap-3 text-bone/70 transition hover:text-gold-bright">
+                <MapPin className="mt-1 h-4 w-4 shrink-0 text-gold" />
+                <span className="leading-6">
+                  {CONTACT.address.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                  <span className="mt-1 block text-[10px] uppercase tracking-[0.18em] text-gold/80">{t("openInMaps")}</span>
+                </span>
+              </a>
+              <a href={CONTACT.phoneHref} className="flex items-center gap-3 text-bone/70 transition hover:text-gold-bright">
+                <Phone className="h-4 w-4 shrink-0 text-gold" />
+                {CONTACT.phone}
+              </a>
+              <a href={CONTACT.emailHref} className="flex items-center gap-3 text-bone/70 transition hover:text-gold-bright">
+                <Mail className="h-4 w-4 shrink-0 text-gold" />
+                {CONTACT.email}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-14 flex flex-col items-center gap-3 border-t border-gold-hairline pt-6 text-center text-[11px] text-bone-muted/70 sm:flex-row sm:justify-between sm:text-left">
+          <p>
+            &copy; {new Date().getFullYear()} {BRAND.name}. {t("allRightsReserved")}
+          </p>
+          <Link to="/privacy" className="uppercase tracking-[0.18em] transition hover:text-gold-bright">
+            {t("privacyPolicy")}
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
+}

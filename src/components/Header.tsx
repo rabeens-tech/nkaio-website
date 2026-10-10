@@ -1,100 +1,204 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { Drawer } from "vaul";
-import { Menu } from "lucide-react";
-import Booking from "./Booking";
-import NAV_ITEMS from "../navs";
-import Contact from "./Contact";
-import { Link } from "react-router";
-import { THEME } from "../theme";
+import { ArrowUpRight, Menu, Phone, X } from "lucide-react";
+import { Link, useLocation } from "react-router";
+import { asset, BRAND, CONTACT } from "../config";
+import { PRIMARY_NAV, SERVICES_INDEX } from "../routes";
+import { useLanguage } from "../i18n";
+import { cn } from "../lib/cn";
+import { BookingButton } from "./BookingButton";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { Flourish } from "./Ornaments";
+import { ServicesDropdown } from "./ServicesDropdown";
+import { ContactButton } from "./ContactButton";
 
-
-const MobileHeader: React.FC = () => {
+export function Header() {
+  const { pathname } = useLocation();
+  const { t } = useLanguage();
+  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const blended = pathname === "/" && !scrolled;
+
   return (
-      <header className="sticky top-0 z-50 w-full border-b border-[rgba(199,169,107,0.2)] bg-[#090909]/80 text-white backdrop-blur-md">
-        <div className="relative mx-auto flex h-[76px] max-full items-center justify-between px-5 sm:px-8">
-          {/* Menu Button — opens vaul Drawer */}
-          <div className="gap-2">
-            <Drawer.Root open={menuOpen} onOpenChange={setMenuOpen} direction="left">
-              <Drawer.Trigger asChild>
-                <button
-                  className="flex h-10 w-10 items-center justify-center rounded-full border transition active:scale-95"
-                  style={{
-                    borderColor: THEME.colors.borderSoft,
-                    backgroundColor: THEME.colors.panel,
-                  }}
-                  aria-label="Toggle menu"
-                >
-                  <Menu className="h-5 w-5 cursor-pointer" style={{ color: THEME.colors.goldLight }} />
-                </button>
-              </Drawer.Trigger>
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-60 transition-colors duration-500",
+        blended ? "bg-transparent" : "border-b border-gold-hairline bg-ink/88 backdrop-blur-xl",
+      )}
+    >
+      {blended && (
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/80 via-black/35 to-transparent" aria-hidden="true" />
+      )}
 
-              <Drawer.Portal>
-                {/* Scrim */}
-                <Drawer.Overlay
-                  className="fixed inset-0 z-[90] bg-black/60 backdrop-blur-sm"
-                  onClick={() => setMenuOpen(false)}
-                />
+      <div className="shell relative flex h-16 items-center justify-between gap-3 lg:h-20">
+        {/* <div className="flex items-center gap-2 lg:hidden"> */}
+        <div className="flex items-center gap-2">
+          <Drawer.Root open={menuOpen} onOpenChange={setMenuOpen}>
+            <Drawer.Trigger asChild>
+              <button
+                className="flex h-10 w-10 items-center justify-center border border-gold-hairline bg-gold-veil text-gold-light transition active:scale-95"
+                aria-label={t("toggleMenu")}
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+            </Drawer.Trigger>
 
-                {/* Panel */}
-                <Drawer.Content className="fixed inset-y-0 left-0 z-[100] flex w-full max-w-[480px] flex-col border-r bg-[#0d0c0a] outline-none" style={{ borderColor: THEME.colors.line }}>
-                  {/* Drag handle (horizontal, for left drawer drag-to-close) */}
-                  <div className="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-1 rounded-full bg-white/20" />
+            <Drawer.Portal>
+              <Drawer.Overlay className="fixed inset-0 z-90 bg-black/70 backdrop-blur-sm" onClick={() => setMenuOpen(false)} />
+              <Drawer.Content className="fixed inset-y-0 left-0 z-100 flex w-full max-w-[88vw] flex-col border-r border-gold-hairline bg-ink-soft outline-none">
+                <div className="flex items-start justify-between border-b border-gold-hairline px-6 py-5">
+                  <div>
+                    <img src={asset(BRAND.wordmark)} alt={BRAND.name} className="h-20 w-auto max-w-[130px] object-contain object-bottom" />
+                    <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.24em] text-bone-muted/60">{t("sidebarTagline")}</p>
+                  </div>
+                  <Drawer.Close asChild>
+                    <button
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-gold-hairline text-gold-light transition hover:bg-gold-veil-strong"
+                      aria-label={t("closeNavigation")}
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </Drawer.Close>
+                </div>
 
-                  <Drawer.Title className="sr-only">Navigation</Drawer.Title>
+                <Drawer.Title className="sr-only">{t("menuTitle")}</Drawer.Title>
 
-                  <nav className="px-4 pb-10 pt-2 overflow-y-scroll scrollbar-none">
-                    {NAV_ITEMS.filter((item) => item.header).map((item) => (
+                <nav aria-label={t("mainNavigation")} className="flex-1 overflow-y-auto px-6 py-6">
+                  <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.26em] text-gold">{t("explore")}</p>
+                  <ul>
+                    <li>
                       <Link
-                        key={item.name}
-                        to={item.link}
+                        to="/"
                         onClick={() => setMenuOpen(false)}
-                        className="group flex items-center gap-3 border-b border-white/[0.07] py-1.5 transition hover:bg-white/[0.02]  py-3"
+                        aria-current={pathname === "/" ? "page" : undefined}
+                        className={cn(
+                          "group flex min-h-14 items-center gap-3 border-b border-gold-hairline/60 py-2.5 transition-colors",
+                          pathname === "/" ? "text-gold-bright" : "text-bone hover:text-gold-light",
+                        )}
                       >
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md">
-                          <img
-                            src={(import.meta.env.BASE_URL || "/")  + item.icon }
-                            alt={item.name}
-                            className="h-[90%] w-[90%] object-cover"
-                            style={{ filter: "brightness(1.08)" }}
-                          />
-                        </div>
-                        <span
-                          className="text-[1.3em] font-medium tracking-wide transition"
-                          style={{ color: THEME.colors.goldLight }}
-                        >
-                          {item.name}
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/25 bg-gold-veil">
+                          <img src={asset("icons/home.png")} alt="" className="h-4 w-4 object-contain brightness-125" loading="lazy" />
                         </span>
+                        <span className="flex-1 font-gothic text-xl">{t("navHome")}</span>
+                        <ArrowUpRight className={cn("h-4 w-4 transition", pathname === "/" ? "text-gold-light" : "text-gold/50 opacity-0 group-hover:opacity-100")} />
                       </Link>
-                    ))}
-                  </nav>
-                </Drawer.Content>
-              </Drawer.Portal>
-            </Drawer.Root>
-          </div>
+                    </li>
 
-          {/* Brand */}
-          <div className="pointer-events-none absolute left-1/2 -translate-x-1/2">
-            <Link to="/" className="pointer-events-auto flex items-center justify-center">
-              <img
-                alt="NKAIO"
-                src={`${import.meta.env.BASE_URL}nkaio-text-logo.png`}
-                // src={`nkaio-text-logo.png`}
-                className="h-7 w-auto max-w-[110px] object-contain sm:h-8 sm:max-w-[140px]"
-              />
-            </Link>
-          </div>
+                    {PRIMARY_NAV.map((item) => {
+                      const active = pathname === item.path;
+                      return (
+                        <li key={item.path}>
+                          <Link
+                            to={item.path}
+                            onClick={() => setMenuOpen(false)}
+                            aria-current={active ? "page" : undefined}
+                            className={cn(
+                              "group flex min-h-14 items-center gap-3 border-b border-gold-hairline/60 py-2.5 transition-colors",
+                              active ? "text-gold-bright" : "text-bone hover:text-gold-light",
+                            )}
+                          >
+                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/25 bg-gold-veil">
+                              <img src={asset(item.icon)} alt="" className="h-4 w-4 object-contain brightness-125" loading="lazy" />
+                            </span>
+                            <span className="flex-1 font-gothic text-xl">{t(item.labelKey)}</span>
+                            <ArrowUpRight className={cn("h-4 w-4 transition", active ? "text-gold-light" : "text-gold/50 opacity-0 group-hover:opacity-100")} />
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
 
-          {/* Book Now */}
-          <div className="flex items-center gap-3">
-            <Booking calendly_url="https://calendly.com/neupanerabeen/30min" />
-            <Contact />
-          </div>
+                  <ServicesDropdown variant="list" onNavigate={() => setMenuOpen(false)} />
+                </nav>
 
+                <div className="space-y-4 border-t border-gold-hairline px-6 py-5">
+                  <Flourish className="mb-1" />
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-bone-muted/60">{t("appointmentsEnquiries")}</p>
+                      <a href={CONTACT.phoneHref} className="mt-1.5 inline-flex items-center gap-2 text-sm text-gold-light transition hover:text-gold-bright">
+                        <Phone className="h-3.5 w-3.5" /> {CONTACT.phone}
+                      </a>
+                    </div>
+                  </div>
+                  <LanguageSwitcher showIcon={false} />
+                  <BookingButton labelKey="scheduleSession" iconOnly />
+                </div>
+              </Drawer.Content>
+            </Drawer.Portal>
+          </Drawer.Root>
         </div>
-      </header>
-  );
-};
 
-export default MobileHeader;
+        <Link to="/" className="flex shrink-0 items-center gap-3" aria-label={BRAND.name}>
+          <img src={asset(BRAND.wordmark)} alt={BRAND.name} className="h-7 w-auto max-w-[88px] object-contain object-left sm:h-8 sm:max-w-[132px]" />
+        </Link>
+
+        <nav aria-label={t("mainNavigation")} className="hidden flex-1 items-center justify-center gap-7 lg:flex">
+          {/* <Link
+            to="/"
+            aria-current={pathname === "/" ? "page" : undefined}
+            className={cn(
+              "relative py-2 text-[10px] font-medium uppercase tracking-[0.18em] transition-colors",
+              pathname === "/" ? "text-gold-bright" : "text-bone/70 hover:text-gold-light",
+            )}
+          >
+            {t("navHome")}
+            <span
+              className={cn(
+                "absolute inset-x-0 -bottom-0.5 h-px origin-left bg-gold transition-transform duration-300",
+                pathname === "/" ? "scale-x-100" : "scale-x-0",
+              )}
+              aria-hidden="true"
+            />
+          </Link> */}
+
+          {PRIMARY_NAV.map((item) =>
+            item.path === SERVICES_INDEX ? (
+              null
+              // <ServicesDropdown key={item.path} variant="menu" />
+            ) : (
+              <Link
+                key={item.path}
+                to={item.path}
+                aria-current={pathname === item.path ? "page" : undefined}
+                className={cn(
+                  "relative py-2 text-[10px] font-medium uppercase tracking-[0.18em] transition-colors",
+                  pathname === item.path ? "text-gold-bright" : "text-bone/70 hover:text-gold-light",
+                )}
+              >
+                {t(item.labelKey)}
+                <span
+                  className={cn(
+                    "absolute inset-x-0 -bottom-0.5 h-px origin-left bg-gold transition-transform duration-300",
+                    pathname === item.path ? "scale-x-100" : "scale-x-0",
+                  )}
+                  aria-hidden="true"
+                />
+              </Link>
+            ),
+          )}
+        </nav>
+
+        <div className="flex shrink-0 items-center gap-2 lg:gap-3">
+          <LanguageSwitcher className="hidden sm:flex" showIcon={false} />
+          <BookingButton />
+          <ContactButton />
+          {/* <Link
+            to="/contact"
+            className="inline-flex min-h-11 items-center justify-center gap-2 border border-gold-hairline px-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-bone/80 transition duration-300 hover:border-gold/60 hover:text-gold-bright sm:px-4"
+          >
+            {t("contact")}
+          </Link> */}
+        </div>
+      </div>
+    </header>
+  );
+}
