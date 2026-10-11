@@ -16,6 +16,7 @@ export default function Home() {
         <video
           autoPlay
           loop
+          muted
           playsInline
           preload="metadata"
           poster={asset(HERO.poster)}

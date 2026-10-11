@@ -2,9 +2,9 @@ export const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 export const BRAND = {
   name: "NKAIO",
-  wordmark: "images/NKAIO-logo.png",
-  mark: "images/NKAIO-logo.png",
-  domain: "https://nkaio.pt",
+  wordmark: "images/NKAIO-logo-T.png",
+  mark: "images/NKAIO-logo-T.png",
+  domain: "https://nkaio.com",
 } as const;
 
 export const CONTACT = {
@@ -37,7 +37,7 @@ export type SocialId = (typeof SOCIALS)[number]["id"];
 
 export const HERO = {
   video: "videos/NKAIO-animate.mp4",
-  poster: "images/NKAIO-logo.png",
+  poster: "images/NKAIO-logo-T.png",
 } as const;
 
 export const NAV_COLUMNS = [
